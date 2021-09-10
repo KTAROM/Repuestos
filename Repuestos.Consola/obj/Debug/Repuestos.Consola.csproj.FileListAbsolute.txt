@@ -8,3 +8,13 @@ C:\Users\kta_r\Documents\GitHub\Repuestos.Consola\Repuestos.Consola\bin\Debug\Re
 C:\Users\kta_r\Documents\GitHub\Repuestos.Consola\Repuestos.Consola\obj\Debug\Repuestos.Consola.csproj.CopyComplete
 C:\Users\kta_r\Documents\GitHub\Repuestos.Consola\Repuestos.Consola\obj\Debug\Repuestos.Consola.exe
 C:\Users\kta_r\Documents\GitHub\Repuestos.Consola\Repuestos.Consola\obj\Debug\Repuestos.Consola.pdb
+C:\Users\kta_r\Documents\GitHub\Repuestos\Repuestos.Consola\bin\Debug\Repuestos.Consola.exe.config
+C:\Users\kta_r\Documents\GitHub\Repuestos\Repuestos.Consola\bin\Debug\Repuestos.Consola.exe
+C:\Users\kta_r\Documents\GitHub\Repuestos\Repuestos.Consola\bin\Debug\Repuestos.Consola.pdb
+C:\Users\kta_r\Documents\GitHub\Repuestos\Repuestos.Consola\bin\Debug\Repuestos.Libreria.dll
+C:\Users\kta_r\Documents\GitHub\Repuestos\Repuestos.Consola\bin\Debug\Repuestos.Libreria.pdb
+C:\Users\kta_r\Documents\GitHub\Repuestos\Repuestos.Consola\obj\Debug\Repuestos.Consola.csproj.AssemblyReference.cache
+C:\Users\kta_r\Documents\GitHub\Repuestos\Repuestos.Consola\obj\Debug\Repuestos.Consola.csproj.CoreCompileInputs.cache
+C:\Users\kta_r\Documents\GitHub\Repuestos\Repuestos.Consola\obj\Debug\Repuestos.Consola.csproj.CopyComplete
+C:\Users\kta_r\Documents\GitHub\Repuestos\Repuestos.Consola\obj\Debug\Repuestos.Consola.exe
+C:\Users\kta_r\Documents\GitHub\Repuestos\Repuestos.Consola\obj\Debug\Repuestos.Consola.pdb

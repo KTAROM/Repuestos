@@ -18,6 +18,17 @@ namespace Repuestos.Libreria.Entidades
         {
             get { return _nombre; }
         }
+
+        public int Codigo
+        {
+            get { return _codigo; }
+        }
+
+        public int cantidad
+        {
+            get { return _stock; }
+            set { _stock = value; }
+        }
         public Repuesto(int cod, string nombre, Categoria cat)
         {
             _codigo = cod;
