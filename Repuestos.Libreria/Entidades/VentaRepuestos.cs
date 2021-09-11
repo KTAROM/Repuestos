@@ -11,6 +11,7 @@ namespace Repuestos.Libreria.Entidades
         private List<Repuesto> _listaProductos;
         private string _nombreComercio;
         private string _direccion;
+       
 
         public List<Repuesto> ListaRepuestos
         {
@@ -24,81 +25,117 @@ namespace Repuestos.Libreria.Entidades
             _listaProductos = new List<Repuesto>();
         }
 
+
         public void AgregarRepuesto(Repuesto Repuesto1)
-        {
-            Console.WriteLine("Indique cantidad de unidades a agregar al stock");
-            int unidades = int.Parse(Console.ReadLine());
-            Repuesto1.cantidad += unidades;
-            Console.WriteLine("La cantidad actual de unidades es " + Repuesto1.cantidad);
-        }
+         {
+         ListaRepuestos.Add(Repuesto1);
+            Console.WriteLine("Se creó el repuesto indicado");
+            Console.ReadKey();
+         }
 
         public void QuitarRepuesto(Repuesto Respuesto1)
         {
-            if (Respuesto1.cantidad < 1)
-            {
-                Console.Clear();
-                Console.WriteLine("El respuesto que ud. desea modificar no posee unidades en stock");
-            }
-            else
-            {
-                Console.Clear();
-                Console.WriteLine("Indique cantidad de unidades a quitar al stock");
-                int unidades = int.Parse(Console.ReadLine());
-                bool opcion;
-                if (Respuesto1.cantidad < unidades)
-                {
-                    opcion = false;
-                    do
-                    {
-                        
-                        Console.WriteLine("NOMBRE RESPUESTO: "+Respuesto1.Nombre+
-                            "\n"+"STOCK REPUESTO: "+Respuesto1.cantidad+
-                            "\n"+"La cantidad que ud. ingreso es mayor a las existentes en stock" + "\n" +
-                            "Si desea modificar la cantidad presione S o cualquier tecla para salir");
-                        string respuesta = Console.ReadLine();
-                        if (respuesta.ToLower() == "s")
-                        {
-                            Console.WriteLine("Ingrese la cantidad nuevamente");
-                            unidades = int.Parse(Console.ReadLine());
-                            if (Respuesto1.cantidad >= unidades)
-                            {
-                                opcion = true;
-                            }
+            ListaRepuestos.Remove(Respuesto1);
+        }
 
+        /*public void ModificarPrecio(int cod, double precio)
+        {
+           Console.WriteLine("Indique el nuevo valor del repuesto");
+           double precio = double.Parse(Console.ReadLine());
+           repu += unidades;
+           Console.WriteLine("La cantidad actual de unidades es " + Repuesto1.cantidad);
+
+       }*/
+
+        public void AgregarStock(int cod, int cant)
+        {
+
+            foreach (Repuesto c in ListaRepuestos)
+            {
+                if (c.Codigo == cod)
+                {
+                    Console.Clear();
+                    Console.WriteLine("El repuesto que se va a modificar es " + c.Nombre + "\n" +
+                        "Si es correcto presione S o presione cualquier tecla para volver al menu anterior");
+                    string opcion = Console.ReadLine();
+                    if (opcion.ToUpper() == "S")
+                    {
+                        c.cantidad += cant;
+                        Console.WriteLine("La cantidad actual de unidades es " + c.cantidad);
+                        Console.ReadKey();
+                    }
+                }
+            }
+        }
+
+        public void QuitarStock(int cod, int cant)
+        {
+            foreach (Repuesto c in ListaRepuestos)
+            {
+                if (c.Codigo == cod)
+                {
+                    Console.Clear();
+                    Console.WriteLine("El repuesto que se va a modificar es " + c.Nombre + "\n" +
+                "Si es correcto presione S o presione cualquier tecla para volver al menu anterior");
+                    string opcion = Console.ReadLine();
+                    if (opcion.ToUpper() == "S")
+                    {
+                        if (c.cantidad < 1)
+                        {
+                            Console.Clear();
+                            Console.WriteLine("El respuesto que ud. desea modificar no posee unidades en stock");
                         }
                         else
                         {
-                            unidades = 0;
-                            opcion = true;
+                            Console.Clear();
+                            bool opcion1;
+                            if (c.cantidad < cant)
+                            {
+                                opcion1 = false;
+                                do
+                                {
 
+                                    Console.WriteLine("NOMBRE RESPUESTO: " + c.Nombre +
+                                        "\n" + "STOCK REPUESTO: " + c.cantidad +
+                                        "\n" + "La cantidad que ud. ingreso es mayor a las existentes en stock" + "\n" +
+                                        "Si desea modificar la cantidad presione S o cualquier tecla para salir");
+                                    string respuesta = Console.ReadLine();
+                                    if (respuesta.ToLower() == "s")
+                                    {
+                                        Console.WriteLine("Ingrese la cantidad nuevamente");
+                                        cant = int.Parse(Console.ReadLine());
+                                        if (c.cantidad >= cant)
+                                        {
+                                            opcion1 = true;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        cant = 0;
+                                        opcion1 = true;
+                                    }
+                                } while (opcion1 == false);
+                            }
+
+                            c.cantidad -= cant;
+                            Console.WriteLine("La cantidad actual de unidades es " + c.cantidad);
+                            Console.ReadKey();
                         }
-                    } while (opcion == false);
-
-
-                    Respuesto1.cantidad -= unidades;
-                    Console.WriteLine("La cantidad actual de unidades es " + Respuesto1.cantidad);
+                    }
                 }
             }
-            /* public void ModificarPrecio(int cod, double precio)
-             {
+        }
+       
+    }
+}
+    
 
-             }
 
-             public void AgregarStock(int cod, int cant)
-             {
 
-             }
-
-             public void QuitarStock(int cod, int cant)
-             {
-
-             }
-
-             public List<Repuesto> TraerPorCategoria(int cod)
+             /*public List<Repuesto> TraerPorCategoria(int cod)
              {
                  List<Repuesto> ListaRespuestos = new List<Repuesto>();
                  return ListaRespuestos;
              }*/
-        }
-    }
-}
+        
+

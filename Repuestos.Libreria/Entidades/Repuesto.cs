@@ -13,6 +13,7 @@ namespace Repuestos.Libreria.Entidades
         private double _precio;
         private int _stock;
         private Categoria Categoria;
+        
 
         public string Nombre
         {
@@ -29,13 +30,18 @@ namespace Repuestos.Libreria.Entidades
             get { return _stock; }
             set { _stock = value; }
         }
+        public double precio
+        {
+            get { return _precio; }
+            set { _precio = value; }
+        }
         public Repuesto(int cod, string nombre, Categoria cat)
         {
             _codigo = cod;
             _nombre = nombre;
             Categoria = cat;
         }
-
-        //Tostring(): string
+      //ToString:string
+       
     }
 }

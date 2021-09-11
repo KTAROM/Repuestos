@@ -8,7 +8,8 @@ namespace Repuestos.Consola
 {
     class Helper
     {
-       public static int ValidarNum(string texto)
+        
+        public static int ValidarNum(string texto)
         {
             int numero = 0;
             do 
@@ -27,5 +28,7 @@ namespace Repuestos.Consola
             }while (numero==0);
             return numero;
         }
+       
+
     }
 }

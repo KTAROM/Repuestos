@@ -15,8 +15,14 @@ namespace Repuestos.Libreria.Entidades
         {
             get { return _nombre; }
         }
+        public int codigo
+        {
+            get { return _codigo; }
+        }
+        public Categoria()
+        { }
 
-        public Categoria (int cod, string nombre)
+        public Categoria(int cod, string nombre)
         {
             _codigo = cod;
             _nombre = nombre;
@@ -24,3 +30,4 @@ namespace Repuestos.Libreria.Entidades
 
     }
 }
+
