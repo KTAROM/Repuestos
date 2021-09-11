@@ -36,10 +36,12 @@ namespace Repuestos.Libreria.Entidades
         {
             if (Respuesto1.cantidad < 1)
             {
+                Console.Clear();
                 Console.WriteLine("El respuesto que ud. desea modificar no posee unidades en stock");
             }
             else
             {
+                Console.Clear();
                 Console.WriteLine("Indique cantidad de unidades a quitar al stock");
                 int unidades = int.Parse(Console.ReadLine());
                 bool opcion;
@@ -48,12 +50,16 @@ namespace Repuestos.Libreria.Entidades
                     opcion = false;
                     do
                     {
-                        Console.WriteLine("La cantidad que ud. ingreso es mayor a las existentes en stock" + "\n" +
+                        
+                        Console.WriteLine("NOMBRE RESPUESTO: "+Respuesto1.Nombre+
+                            "\n"+"STOCK REPUESTO: "+Respuesto1.cantidad+
+                            "\n"+"La cantidad que ud. ingreso es mayor a las existentes en stock" + "\n" +
                             "Si desea modificar la cantidad presione S o cualquier tecla para salir");
                         string respuesta = Console.ReadLine();
                         if (respuesta.ToLower() == "s")
                         {
-                            unidades = int.Parse(respuesta);
+                            Console.WriteLine("Ingrese la cantidad nuevamente");
+                            unidades = int.Parse(Console.ReadLine());
                             if (Respuesto1.cantidad >= unidades)
                             {
                                 opcion = true;
@@ -69,7 +75,7 @@ namespace Repuestos.Libreria.Entidades
                     } while (opcion == false);
 
 
-                    Respuesto1.cantidad += unidades;
+                    Respuesto1.cantidad -= unidades;
                     Console.WriteLine("La cantidad actual de unidades es " + Respuesto1.cantidad);
                 }
             }
